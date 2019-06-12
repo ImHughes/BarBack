@@ -3,15 +3,13 @@
         {
             "id": 1,
             "drinkTypeId": 1,
-            "drinkType": "beer",
-            "DrinkName": "Budlight",
+            "drinkName": "Budlight",
             "style": "pilsner",
             "info": "drinks like water"
         },
         {
             "id": 2,
             "drinkTypeId": 1,
-            "drinkType": "beer",
             "drinkName": "Millerlight",
             "style": "pilsner",
             "info": "drinks like water"
@@ -19,7 +17,6 @@
         {
             "id": 3,
             "drinkTypeId": 1,
-            "drinkType": "beer",
             "drinkName": "Yazoo",
             "style": "American Brown Ale",
             "info": "Many Mexican beer styles today are descendants of old Austrian styles, from when Austria ruled Mexico in the late 19th century. Our Dos Perros is made with German Munich malt, English Pale malt, and Chocolate malt, and hopped with Perle and Saaz hops. To lighten the body, as many Mexican brewers do, we add a small portion of flaked maize. The result is a wonderfully bready malt aroma, balanced with some maize sweetness and a noble hop finish."
@@ -27,7 +24,6 @@
         {
             "id": 4,
             "drinkTypeId": 1,
-            "drinkType": "beer",
             "drinkName": "SouthernGrist",
             "style": "Sour",
             "info": "Double Fruited Marshmallow Passion Fruit Pineapple Hill"
@@ -35,130 +31,141 @@
         {
             "id": 5,
             "drinkTypeId": 1,
-            "drinkType": "beer",
             "drinkName": "Guinness",
             "style": "Stout",
             "info": "Medium and balanced. A roast character with subtle fermentation fruitiness"
         },
         {
-            "id": 1,
+            "id": 6,
             "drinkTypeId": 2,
-            "drinkType": "wine",
             "drinkName": "Arrington Vineyards Red Fox Red",
             "style": "Red",
             "info": "Made primarily from Sangiovese grapes, this blend also includes Petite Sirah, Cabernet Sauvignon, and Chambourcin. After fermentation, the wine is pressed, settled, then aged for 20 months in French, Hungarian and American oak barrels. We blend these grape varieties together to create a silky smooth medium bodied red wine with delicious red berry flavors and a touch of oak on the finish."
         },
         {
-            "id": 2,
+            "id": 7,
             "drinkTypeId": 2,
-            "drinkType": "wine",
             "drinkName": "Mayacamas Vineyards’",
             "style": "Cabernet Sauvignon",
             "info": "Acidity is bright, and the wine has tart, juicy black fruits. Herbs and black licorice add nuance, while chewy tannins persist in a lingering finish, which is rich in stony mineral notes"
         },
         {
-            "id": 3,
+            "id": 8,
             "drinkTypeId": 2,
-            "drinkType": "wine",
             "drinkName": "OLEMA CABERNET SAUVIGNON SONOMA COUNTY, 2016",
             "style": "Red",
             "info": "Lots of black currant and blackberry aromas with hints of wet earth and spice cake. Medium body with a solid center palate of ripe fruit and fine tannins. Soft and silky."
         },
         {
-            "id": 4,
+            "id": 9,
             "drinkTypeId": 2,
-            "drinkType": "wine",
             "drinkName": "SAMUEL ROBERT WINERY PINOT NOIR VINTNER'S RESERVE WILLAMETTE, 2017",
             "style": "Red",
             "info": "Aromas of dark cherry and cinnamon will draw you into this beautifully handcrafted Pinot Noir. On the palate refreshing red fruits and light tannins round out the wine nicely. Its polish and grace exemplifies the beauty of a Willamette Valley Pinot Noir"
         },
         {
-            "id": 5,
+            "id": 10,
             "drinkTypeId": 2,
-            "drinkType": "wine",
             "drinkName": "BUTTERCREAM CHARDONNAY",
             "style": "White Wine",
             "info": "Tastes like silken butter dripped over a fresh croissant. A decadent Chardonnay perfect for enjoying on the dock of the bay, the backyard, with friends, or really anywhere! Vegan"
         },
         {
-            "id": 1,
+            "id": 11,
             "drinkTypeId": 3,
-            "drinkType": "cocktail",
             "drinkName": "Negroni",
             "style": "Aperitif classic",
             "info": "Refreshingly bitter made with gin, Vermouth, and Campari"
         },
         {
-            "id": 2,
+            "id": 12,
             "drinkTypeId": 3,
-            "drinkType": "cocktail",
             "drinkName": "Jungle Bird",
             "style": "Tiki",
             "info": "This drink is made with pineapple juice, lime juice, Cappelletti, Demerara syrup, and dark rum. It has a tropical sweet and sour flavor with a bitter finish."
         },
         {
-            "id": 3,
+            "id": 13,
             "drinkTypeId": 3,
-            "drinkType": "cocktail",
             "drinkName": "Old Fashioned",
             "style": "classic",
             "info": "Made with Bourbon, Simple syrup, and a dash of Angostura bitters this drink is a bourbon forward cocktail with a light bitter finish."
         },
         {
-            "id": 4,
+            "id": 14,
             "drinkTypeId": 3,
-            "drinkType": "cocktail",
             "drinkName": "Moscow Mule",
             "style": "classic",
             "info": "Made with Vodka, ginger beer, and lime juice. This drink is a refreshing citrus drink with a spice finish thanks to the ginger"
         },
         {
-            "id": 5,
+            "id": 15,
             "drinkTypeId": 3,
-            "drinkType": "cocktail",
             "drinkName": "Harvey Wallbanger",
             "style": "Highball",
             "info": "Made with vodka, Galliano liqueur, and passion fruit juice, this drink is sweet with a hint of herbal flavor and it's also Robbie's favorite"
         },
         {
-            "id": 1,
+            "id": 16,
             "drinkTypeId": 4,
-            "drinkType": "shot",
             "drinkName": "Whisky",
             "style": "Whisky",
             "info": "Whisky"
         },
         {
-            "id": 2,
+            "id": 17,
             "drinkTypeId": 4,
-            "drinkType": "shot",
             "drinkName": "Fireball",
             "style": "Bourbon",
             "info": "Tastes like a red hot"
         },
         {
-            "id": 3,
+            "id": 18,
             "drinkTypeId": 4,
-            "drinkType": "shot",
             "drinkName": "Buttery Nipple",
             "style": "mixed shot",
             "info": "Bailey's Irish Cream, Butterscotch Schnapps it's thick and creamy and very sweet"
         },
         {
-            "id": 4,
+            "id": 19,
             "drinkTypeId": 4,
-            "drinkType": "shot",
             "drinkName": "Kamikaze",
             "style": "mixed shot",
             "info": "Made with Vodka, Triple Sec, and Limes this drink is very citrus flavor, to many of these and you will crash a plain into an aircraft carrier."
         },
         {
-            "id": 5,
+            "id": 20,
             "drinkTypeId": 4,
-            "drinkType": "shot",
             "drinkName": "Vodka",
             "style": "",
             "info": "Vodka"
+        }
+    ],
+    "bars": [
+        {
+            "id": 1,
+            "name": "The Big Bang",
+            "address": "154 2nd Ave N, Nashville, TN 37201"
+        },
+        {
+            "id": 2,
+            "name": "Ole Red",
+            "address": "300 Broadway, Nashville, TN 37201"
+        },
+        {
+            "id": 3,
+            "name": "The Stage",
+            "address": "307 Broadway, Nashville, TN 37201"
+        },
+        {
+            "id": 4,
+            "name": "The Valentine",
+            "address": "312 Broadway, Nashville, TN 37201"
+        },
+        {
+            "id": 5,
+            "name": "AJ's Good Time Bar",
+            "address": "412 Broadway, Nashville, TN 37201"
         }
     ]
 }
