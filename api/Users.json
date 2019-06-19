@@ -1,0 +1,21 @@
+{
+    "admin": [
+        {
+            "id": 1,
+            "user_name": "admin",
+            "user_pw": "admin"
+        }
+    ],
+    "customer": [
+        {
+            "id": 1,
+            "user_name": "cust_1",
+            "user_pw": "pass"
+        },
+        {
+            "id": 2,
+            "user_name": "cust_2",
+            "user_pw": "pass"
+        }
+    ]
+}

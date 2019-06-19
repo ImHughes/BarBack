@@ -5,6 +5,18 @@ export default {
     get(id) {
         return fetch(`${src}/drinks/${id}`).then(e => e.json());
     },
+    getBeer() {
+        return fetch(`${src}/drinks/?drinkTypeId=1`).then(e => e.json());
+    },
+    getWine() {
+        return fetch(`${src}/drinks/?drinkTypeId=2`).then(e => e.json());
+    },
+    getCocktail() {
+        return fetch(`${src}/drinks/?drinkTypeId=3`).then(e => e.json());
+    },
+    getShots() {
+        return fetch(`${src}/drinks/?drinkTypeId=4`).then(e => e.json());
+    },
     getAll() {
         return fetch(`${src}/drinks/`).then(e => e.json());
     },

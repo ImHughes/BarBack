@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Navbar, NavItem, Button, Dropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'reactstrap'
+import { Navbar, NavLink, NavItem, Button, Dropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'reactstrap'
+import { Link } from "react-router-dom"
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -16,20 +17,40 @@ class NavBar extends React.Component {
             dropdownOpen: !prevState.dropdownOpen
         }));
     }
+    // handleFieldChange = evt => {
+    //     cost  = {}
+    // }
     render() {
         return (
             <div>
                 <Navbar color="primary" >
                     <Button outline color="dark" size="sm">Back</Button>{'  '}
+
                     <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                         <DropdownToggle caret>
                             Drinks
-                    </DropdownToggle>
+                        </DropdownToggle>
                         <DropdownMenu>
-                            <DropdownItem>Beer</DropdownItem>
-                            <DropdownItem>Wine</DropdownItem>
-                            <DropdownItem>Cocktails</DropdownItem>
-                            <DropdownItem>Shots</DropdownItem>
+                            <DropdownItem>
+                                <NavLink tag={Link} to="/beer">
+                                    Beer
+                                </NavLink>
+                            </DropdownItem>
+                            <DropdownItem>
+                                <NavLink tag={Link} to="/wine">
+                                    Wine
+                                </NavLink>
+                            </DropdownItem>
+                            <DropdownItem>
+                                <NavLink tag={Link} to="/cocktail">
+                                    Cocktails
+                                </NavLink>
+                            </DropdownItem>
+                            <DropdownItem>
+                                <NavLink tag={Link} to="/shot">
+                                    Shots
+                                </NavLink>
+                            </DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
 

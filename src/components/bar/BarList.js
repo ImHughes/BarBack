@@ -11,9 +11,9 @@ class BarList extends Component {
         return (
 
             <div>
-                <section className="drinks">
+                <section>
                     {this.props.drinks.map((drink) =>
-                        <div className="box">
+                        <div>
                             <Container>
                                 <Row>
                                     <Col xs={4}>
