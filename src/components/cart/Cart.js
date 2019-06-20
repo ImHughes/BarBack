@@ -14,8 +14,27 @@ class Cart extends Component {
             this.setState({ carts })
         })
     }
+
     deleteCart = (id) => {
         CartManager.delete(id)
+            .then(CartManager.getAll)
+            .then((carts) => {
+                this.props.carts.push("/carts")
+                this.setState({ carts: carts });
+            })
+    };
+
+    increaseQty = (cartItem) => {
+        CartManager.increaseQty(cartItem)
+            .then(CartManager.getAll)
+            .then((carts) => {
+                this.props.carts.push("/carts")
+                this.setState({ carts: carts });
+            })
+    };
+
+    decreaseQty = (cartItem) => {
+        CartManager.decreaseQty(cartItem)
             .then(CartManager.getAll)
             .then((carts) => {
                 this.props.carts.push("/carts")
@@ -27,13 +46,16 @@ class Cart extends Component {
         console.log("cart")
         return (
             <Container className="cart" xs={12}>
-                {this.state.carts.map((cart) =>
-                    <Card key={cart.id}>
+                {this.state.carts.map((cartItem) =>
+                    <Card key={cartItem.id}>
                         <CardBody>
-                            <CardTitle>{cart.drink.drinkName}  x ({cart.quantity}) </CardTitle>
+                            <CardTitle>{cartItem.drink.drinkName}  x ({cartItem.quantity}) </CardTitle>
+                            <Button onClick={() => this.increaseQty(cartItem)}>+</Button>
+                            &nbsp;
+                            <Button onClick={() => this.decreaseQty(cartItem)}>-</Button>
                         </CardBody>
 
-                        <Button onClick={() => this.deleteCart(cart.id)}>Delete</Button>
+                        <Button onClick={() => this.deleteCart(cartItem.id)}>Delete</Button>
                     </Card>
                 )}
             </Container>

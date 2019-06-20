@@ -5,6 +5,8 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Row, Col, C
 import Cart from "./cart/Cart"
 
 class Beer extends Component {
+
+
     render() {
         console.log("made it to beer")
         return (
