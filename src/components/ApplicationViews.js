@@ -22,14 +22,31 @@ class ApplicationViews extends Component {
         cocktail: [],
         shot: []
     };
-    addCart = (drinks) =>
-        DrinksManager.postNewDrinks(drinks)
-            .then(() => DrinksManager.getAllDrinks())
-            .then((drinks) =>
-                this.state({
-                    drinks: drinks
-                })
-            )
+
+    addCart = (drinkTOAdd) => {
+        CartManager.getAll()
+        this.api()
+            .then((drinks) => {
+                drinks.indexOf(drink => drink.drink.id === drinkTOAdd.id)
+                    .then(() => DrinksManager.getAllDrinks())
+                    .then((drinks) =>
+                        this.state({
+                            drinks: drinks
+                        })
+                    )
+            })
+    }
+
+    // api = (checkForId) => {
+    //     if (!!checkForId) {
+    //         var newQuant = drinks[checkForId].quantity + 1
+    //         return CartManager.edit({ quantity: newQuant })
+
+    //     }
+    //     else {
+    //         return DrinksManager.postNewDrinks(drinks)
+    //     }
+    // }
 
     deleteCart = (id) => {
         CartManager.delete(id)
@@ -55,7 +72,6 @@ class ApplicationViews extends Component {
     addToCart = (drinkId) => {
         const cartItem = { drinkId: drinkId, quantity: 1 }
         return CartManager.post(cartItem)
-
     }
 
     componentDidMount() {
