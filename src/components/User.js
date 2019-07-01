@@ -28,4 +28,4 @@ class User extends Component {
         )
     }
 }
-export default Cocktail
+export default User

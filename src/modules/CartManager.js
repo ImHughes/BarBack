@@ -15,7 +15,7 @@ export default {
         // Check if drinkId exists in cart
         this.getAll()
             .then((currentCart) => {
-                console.log(currentCart)
+                console.log("current cart", currentCart)
                 let foundDrinkInCart = false
 
                 // Loop through the cart array and check if drinkId already exists

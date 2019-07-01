@@ -17,6 +17,12 @@ export default {
     getShots() {
         return fetch(`${src}/drinks/?drinkTypeId=4`).then(e => e.json());
     },
+    getMenu(locId) {
+        return fetch(`${src}/locationDrinks/?locationId=${locId}&_expand=drink`).then(e => e.json());
+    },
+    getDrinksList() {
+        return fetch(`${src}/drinks`).then(e => e.json());
+    },
     getAll() {
         return fetch(`${src}/drinks/`).then(e => e.json());
     },

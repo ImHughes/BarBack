@@ -1,27 +1,30 @@
 import React, { Component } from 'react';
+
 import DrinksManager from "../modules/DrinksManager"
 import UsersManager from "../modules/UsersManager"
+import LocationsManager from "../modules/LocationsManager"
+import CartManager from '../modules/CartManager';
+
 import { Route } from "react-router-dom";
 import { withRouter } from "react-router";
-// import BarList from "./bar/BarList"
-import Beer from "./Beer"
-import Wine from "./Wine"
-import Cocktail from "./Cocktail"
-import Shot from "./Shot"
-import CartManager from '../modules/CartManager';
 import Cart from "./cart/Cart"
-
+import Login from "./login/Login"
+import Locations from "./Locations/Locations"
+import Registration from "./login/Registration"
+import Menu from "./Menu"
+import NavBar from "./NavBar"
 
 class ApplicationViews extends Component {
     state = {
-        drinks: [],
-        bar: [],
+        locations: [],
         carts: [],
-        beer: [],
-        wine: [],
-        cocktail: [],
-        shot: []
+        users: [],
+        menu: [],
+        drinks: [],
+        locationName: ""
+
     };
+
 
     addCart = (drinkTOAdd) => {
         CartManager.getAll()
@@ -37,17 +40,6 @@ class ApplicationViews extends Component {
             })
     }
 
-    // api = (checkForId) => {
-    //     if (!!checkForId) {
-    //         var newQuant = drinks[checkForId].quantity + 1
-    //         return CartManager.edit({ quantity: newQuant })
-
-    //     }
-    //     else {
-    //         return DrinksManager.postNewDrinks(drinks)
-    //     }
-    // }
-
     deleteCart = (id) => {
         CartManager.delete(id)
             .then(CartManager.getAll)
@@ -56,7 +48,6 @@ class ApplicationViews extends Component {
                 this.setState({ carts: carts });
             })
     };
-
 
     updateDrinks = editedDrinkObject => {
         return DrinksManager.edit(editedDrinkObject)
@@ -68,84 +59,125 @@ class ApplicationViews extends Component {
             });
     }
 
-
     addToCart = (drinkId) => {
         const cartItem = { drinkId: drinkId, quantity: 1 }
         return CartManager.post(cartItem)
     }
 
-    componentDidMount() {
+    updateMenu = (locationId) => {
         const newState = {}
-
-        DrinksManager.getAll().then(drinks => {
-            newState.drinks = drinks
+        DrinksManager.getMenu(locationId).then(menu => {
+            newState.menu = menu
         }).then(() => this.setState(newState))
+    }
 
-        DrinksManager.getBeer().then(beer => {
-            newState.beer = beer
+    updateLocation = () => {
+        const newState = {}
+        let locationId = sessionStorage.getItem("locationId")
+
+        LocationsManager.get(locationId).then(location => {
+            newState.locationName = location.name
         }).then(() => this.setState(newState))
-
-        DrinksManager.getWine().then(wine => {
-            newState.wine = wine
-        }).then(() => this.setState(newState))
-
-        DrinksManager.getCocktail().then(cocktail => {
-            newState.cocktail = cocktail
-        }).then(() => this.setState(newState))
-
-        DrinksManager.getShots().then(shot => {
-            newState.shot = shot
-        }).then(() => this.setState(newState))
-
-
 
     }
 
+    componentDidMount() {
+        const newState = {}
 
+        let locId = sessionStorage.getItem('locationId')
 
+        DrinksManager.getAll()
+            .then(drinks => {
+                newState.drinks = drinks
+            })
+
+            .then(() => DrinksManager.getMenu(locId)).then(menu => {
+                newState.menu = menu
+            })
+
+            .then(() => LocationsManager.getAll()).then(locations => {
+                newState.locations = locations
+            })
+
+            .then(() => UsersManager.getAll()).then(users => {
+                newState.users = users
+            }).then(() => this.setState(newState))
+    }
 
     render() {
         return (
             <>
+
                 <Route
                     exact
-                    path="/beer"
+                    path="/menu"
                     render={(props) => {
-                        return <Beer addToCart={this.addToCart}{...props} drinks={this.state.beer} />
+                        return <Menu {...props}
+                            menu={this.state.menu}
+                            locationName={this.state.locationName}
+                        />
                     }}
+
                 />
-                <Route
-                    exact
-                    path="/wine"
-                    render={(props) => {
-                        return <Wine addToCart={this.addToCart}{...props} drinks={this.state.wine} />
-                    }}
-                />
-                <Route
-                    exact
-                    path="/cocktail"
-                    render={(props) => {
-                        return <Cocktail addToCart={this.addToCart}{...props} drinks={this.state.cocktail} />
-                    }}
-                />
-                <Route
-                    exact
-                    path="/shot"
-                    render={(props) => {
-                        return <Shot addToCart={this.addToCart}{...props} drinks={this.state.shot} />
-                    }}
-                />
+
                 <Route
                     exact
                     path="/carts"
                     render={(props) => {
                         return <Cart {...props}
                             deleteCart={this.deleteCart}
-                            carts={this.state.carts} />
+                            carts={this.state.carts}
+                            drinks={this.state.drinks}
+                            menu={this.state.menu}
+                            locationName={this.state.locationName}
+                        />
+                    }}
+
+                />
+                <Route
+                    exact
+                    path="/login"
+                    render={props => {
+                        return (
+                            < Login
+                                {...props}
+                                // populateAppState={this.props.populateAppState}
+                                login={this.props.login}
+                            />
+                        );
+                    }}
+                />
+
+                <Route
+                    exact
+                    path="/locations"
+                    render={props => {
+                        return (
+                            <Locations
+                                {...props}
+                                locations={this.state.locations}
+                                updateMenu={this.updateMenu}
+                                updateLocation={this.updateLocation}
+                            />
+
+                        )
                     }}
 
                 />
 
+                <Route
+                    exact
+                    path="/register"
+                    render={props => {
+                        return (
+                            <Registration
+                                {...props}
+                                register={this.props.register} />
+
+                        )
+                    }}
+
+                />
             </>
         );
 
