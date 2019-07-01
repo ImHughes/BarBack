@@ -12,6 +12,7 @@ class BarBack extends Component {
                     <NavBar />
                     <ApplicationViews />
 
+
                 </>
             </Route>
         )

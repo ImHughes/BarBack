@@ -1,4 +1,260 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "username": "hughes",
+      "password": "123",
+      "email": "hughes@email.com"
+    },
+    {
+      "email": "bill@bill.com",
+      "username": "bill",
+      "password": "123",
+      "id": 2
+    }
+  ],
+  "locationDrinks": [
+    {
+      "id": 1,
+      "drinkId": 1,
+      "locationId": 1,
+      "drinkPrice": 5.99
+    },
+    {
+      "id": 2,
+      "drinkId": 2,
+      "locationId": 1,
+      "drinkPrice": 5.99
+    },
+    {
+      "id": 3,
+      "drinkId": 12,
+      "locationId": 1,
+      "drinkPrice": 13.99
+    },
+    {
+      "id": 4,
+      "drinkId": 3,
+      "locationId": 1,
+      "drinkPrice": 6.99
+    },
+    {
+      "id": 5,
+      "drinkId": 4,
+      "locationId": 1,
+      "drinkPrice": 7.99
+    },
+    {
+      "id": 6,
+      "drinkId": 6,
+      "locationId": 1,
+      "drinkPrice": 9.99
+    },
+    {
+      "id": 7,
+      "drinkId": 7,
+      "locationId": 1,
+      "drinkPrice": 8.99
+    },
+    {
+      "id": 8,
+      "drinkId": 8,
+      "locationId": 1,
+      "drinkPrice": 9.99
+    },
+    {
+      "id": 9,
+      "drinkId": 10,
+      "locationId": 1,
+      "drinkPrice": 12.99
+    },
+    {
+      "id": 10,
+      "drinkId": 5,
+      "locationId": 2,
+      "drinkPrice": 3.5
+    },
+    {
+      "id": 11,
+      "drinkId": 2,
+      "locationId": 2,
+      "drinkPrice": 4.5
+    },
+    {
+      "id": 12,
+      "drinkId": 16,
+      "locationId": 2,
+      "drinkPrice": 6.5
+    },
+    {
+      "id": 13,
+      "drinkId": 12,
+      "locationId": 2,
+      "drinkPrice": 13.5
+    },
+    {
+      "id": 14,
+      "drinkId": 3,
+      "locationId": 2,
+      "drinkPrice": 6.5
+    },
+    {
+      "id": 15,
+      "drinkId": 4,
+      "locationId": 2,
+      "drinkPrice": 7.5
+    },
+    {
+      "id": 16,
+      "drinkId": 6,
+      "locationId": 2,
+      "drinkPrice": 9.5
+    },
+    {
+      "id": 17,
+      "drinkId": 7,
+      "locationId": 2,
+      "drinkPrice": 8.5
+    },
+    {
+      "id": 18,
+      "drinkId": 8,
+      "locationId": 2,
+      "drinkPrice": 9.5
+    },
+    {
+      "id": 19,
+      "drinkId": 10,
+      "locationId": 2,
+      "drinkPrice": 12.5
+    },
+    {
+      "id": 20,
+      "drinkId": 10,
+      "locationId": 2,
+      "drinkPrice": 12.5
+    },
+    {
+      "id": 21,
+      "drinkId": 1,
+      "locationId": 3,
+      "drinkPrice": 4
+    },
+    {
+      "id": 23,
+      "drinkId": 2,
+      "locationId": 3,
+      "drinkPrice": 6
+    },
+    {
+      "id": 23,
+      "drinkId": 3,
+      "locationId": 3,
+      "drinkPrice": 13
+    },
+    {
+      "id": 24,
+      "drinkId": 4,
+      "locationId": 3,
+      "drinkPrice": 6
+    },
+    {
+      "id": 25,
+      "drinkId": 5,
+      "locationId": 3,
+      "drinkPrice": 7
+    },
+    {
+      "id": 26,
+      "drinkId": 6,
+      "locationId": 3,
+      "drinkPrice": 9
+    },
+    {
+      "id": 27,
+      "drinkId": 7,
+      "locationId": 3,
+      "drinkPrice": 8
+    },
+    {
+      "id": 28,
+      "drinkId": 8,
+      "locationId": 3,
+      "drinkPrice": 9
+    },
+    {
+      "id": 29,
+      "drinkId": 9,
+      "locationId": 3,
+      "drinkPrice": 13
+    },
+    {
+      "id": 30,
+      "drinkId": 10,
+      "locationId": 3,
+      "drinkPrice": 12
+    },
+    {
+      "id": 21,
+      "drinkId": 1,
+      "locationId": 4,
+      "drinkPrice": 4.4
+    },
+    {
+      "id": 23,
+      "drinkId": 12,
+      "locationId": 4,
+      "drinkPrice": 6.4
+    },
+    {
+      "id": 23,
+      "drinkId": 1,
+      "locationId": 4,
+      "drinkPrice": 13.4
+    },
+    {
+      "id": 24,
+      "drinkId": 3,
+      "locationId": 4,
+      "drinkPrice": 6.4
+    },
+    {
+      "id": 25,
+      "drinkId": 5,
+      "locationId": 4,
+      "drinkPrice": 7.4
+    },
+    {
+      "id": 26,
+      "drinkId": 18,
+      "locationId": 4,
+      "drinkPrice": 9.4
+    },
+    {
+      "id": 27,
+      "drinkId": 20,
+      "locationId": 4,
+      "drinkPrice": 8.4
+    },
+    {
+      "id": 28,
+      "drinkId": 13,
+      "locationId": 4,
+      "drinkPrice": 9.4
+    },
+    {
+      "id": 29,
+      "drinkId": 14,
+      "locationId": 4,
+      "drinkPrice": 13.4
+    },
+    {
+      "id": 40,
+      "drinkId": 15,
+      "locationId": 4,
+      "drinkPrice": 12.4
+    }
+  ],
   "drinks": [
     {
       "id": 1,
@@ -141,7 +397,7 @@
       "info": "Vodka"
     }
   ],
-  "bars": [
+  "locations": [
     {
       "id": 1,
       "name": "The Big Bang",

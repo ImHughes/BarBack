@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DrinksManager from '../modules/DrinksManager';
 import { Link } from "react-router-dom"
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Row, Col, Container, Button } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, Row, Col, Container, Button } from 'reactstrap';
 
 class Cocktail extends Component {
     render() {

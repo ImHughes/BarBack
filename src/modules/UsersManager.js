@@ -1,9 +1,12 @@
-const src = "http://localhost:5003";
+const src = "http://localhost:5002";
 
 export default {
 
     get(id) {
         return fetch(`${src}/users/${id}`).then(e => e.json());
+    },
+    getAll() {
+        return fetch(`${src}/users/`).then(e => e.json());
     },
     getUser() {
         return fetch(`${src}/users/?UserId=1`).then(e => e.json());
@@ -30,5 +33,10 @@ export default {
             },
             body: JSON.stringify(editUser)
         }).then(e => e.json())
+    },
+    login(username, password) {
+        return fetch(`${src}/users?username=${username}&password=${password}`).then(
+            response => response.json()
+        );
     }
 }
