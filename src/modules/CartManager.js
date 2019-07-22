@@ -8,22 +8,50 @@ export default {
     },
 
     getAll() {
-        return fetch(`${src}/carts?_expand=drink`).then(e => e.json());
+        return fetch(`${src}/carts`).then(e => e.json());
     },
+
+    getAllByUser(user) {
+        return fetch(`${src}/carts?userId=${user}&_expand=drink`).then(e => e.json());
+    },
+
+    // getLocation() {
+    //     return fetch(`${src}locationDrinks?drinkId=${this.drinkId}&locationId=${this.locationId}&_expand=location`)
+    // },
+
+    deleteCart(user) {
+        // Delete all items in "carts"
+        console.log("CartsManager.deleteCart for " + user)
+
+        // Store all cart items for a specific userID in variable "cartItems"
+        this.getAll(user).then((cartItems) => {
+            // For each item returned and stored in cartItems
+            for (let i = 0; i < cartItems.length; i++) {
+                // Call API to delete the cartItem by accessing it's ID
+                console.log("Cart Item", cartItems[i])
+                this.delete(cartItems[i].id)
+            }
+        })
+    },
+
+
 
     post(drink) {
         // Check if drinkId exists in cart
         this.getAll()
             .then((currentCart) => {
-                console.log("current cart", currentCart)
+                // console.log("current cart", currentCart)
                 let foundDrinkInCart = false
+                console.log("CurrentCart array", currentCart)
 
                 // Loop through the cart array and check if drinkId already exists
+
                 for (let i = 0; i < currentCart.length; i++) {
 
                     // Check if the drink passed in as a parameter already exists in the cart based on ID
+                    console.log("CurrentCart", currentCart[i].drinkId)
+                    console.log("Drink", drink.drinkId)
                     if (currentCart[i].drinkId === drink.drinkId) {
-
                         // Set that boolean to true to bypass if statement for POST
                         foundDrinkInCart = true
 

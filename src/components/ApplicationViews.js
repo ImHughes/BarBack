@@ -22,7 +22,6 @@ class ApplicationViews extends Component {
         menu: [],
         drinks: [],
         locationName: ""
-
     };
 
 
@@ -80,6 +79,7 @@ class ApplicationViews extends Component {
         }).then(() => this.setState(newState))
 
     }
+
 
     componentDidMount() {
         const newState = {}

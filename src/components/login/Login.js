@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Col, Form, FormGroup, Label, CardBody, Button, Input } from 'reactstrap';
 import UsersManager from "../../modules/UsersManager"
+import CartManager from "../../modules/CartManager"
 import { Link } from "react-router-dom";
 
 
@@ -18,14 +19,12 @@ class Login extends Component {
 
     onLogin = evt => {
         evt.preventDefault();
-        // console.log("Login props", this.props)
         console.log("State", this.state)
         let loggedIn = false;
         UsersManager.login(this.state.username, this.state.password).then(allUsers => {
             if (allUsers.length < 1) {
                 alert("No user found");
             } else {
-                // console.log("All users", allUsers)
                 allUsers.forEach(user => {
 
                     if (
@@ -41,6 +40,7 @@ class Login extends Component {
                             `${user.username}`
                         );
                         console.log("Logged in as: " + this.state.username + "| variable loggedIn: " + loggedIn)
+
                         this.props.history.push("/locations");
                     }
                 });

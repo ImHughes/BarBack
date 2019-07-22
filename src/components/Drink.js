@@ -6,7 +6,12 @@ import CartManager from "../modules/CartManager"
 class Drink extends Component {
 
     addToCart = (drinkId) => {
-        const cartItem = { drinkId: drinkId, quantity: 1 }
+        const cartItem = {
+            drinkId: drinkId,
+            quantity: 1,
+            userId: parseInt(sessionStorage.getItem("User")),
+            locationId: parseInt(sessionStorage.getItem("locationId"))
+        }
         return CartManager.post(cartItem)
     }
 

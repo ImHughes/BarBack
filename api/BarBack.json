@@ -7,10 +7,16 @@
       "email": "hughes@email.com"
     },
     {
-      "email": "bill@bill.com",
-      "username": "bill",
+      "email": "woogirl@nashville.com",
+      "username": "woogirl",
       "password": "123",
       "id": 2
+    },
+    {
+      "email": "whoogirl@yahoo.com",
+      "username": "bachelorette",
+      "password": "123",
+      "id": 3
     }
   ],
   "locationDrinks": [
@@ -147,7 +153,7 @@
       "drinkPrice": 6
     },
     {
-      "id": 23,
+      "id": 32,
       "drinkId": 3,
       "locationId": 3,
       "drinkPrice": 13
@@ -201,55 +207,55 @@
       "drinkPrice": 4.4
     },
     {
-      "id": 23,
+      "id": 35,
       "drinkId": 12,
       "locationId": 4,
       "drinkPrice": 6.4
     },
     {
-      "id": 23,
+      "id": 24,
       "drinkId": 1,
       "locationId": 4,
       "drinkPrice": 13.4
     },
     {
-      "id": 24,
+      "id": 25,
       "drinkId": 3,
       "locationId": 4,
       "drinkPrice": 6.4
     },
     {
-      "id": 25,
+      "id": 26,
       "drinkId": 5,
       "locationId": 4,
       "drinkPrice": 7.4
     },
     {
-      "id": 26,
+      "id": 27,
       "drinkId": 18,
       "locationId": 4,
       "drinkPrice": 9.4
     },
     {
-      "id": 27,
+      "id": 28,
       "drinkId": 20,
       "locationId": 4,
       "drinkPrice": 8.4
     },
     {
-      "id": 28,
+      "id": 29,
       "drinkId": 13,
       "locationId": 4,
       "drinkPrice": 9.4
     },
     {
-      "id": 29,
+      "id": 30,
       "drinkId": 14,
       "locationId": 4,
       "drinkPrice": 13.4
     },
     {
-      "id": 40,
+      "id": 31,
       "drinkId": 15,
       "locationId": 4,
       "drinkPrice": 12.4

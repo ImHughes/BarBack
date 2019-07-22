@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardBody, CardTitle, Container, Button, Row } from 'reactstrap';
+import LocationsManager from "../../modules/LocationsManager"
 import CartManager from "../../modules/CartManager"
 import DrinksManager from "../../modules/DrinksManager"
 import { Link } from "react-router-dom";
@@ -9,35 +10,54 @@ class Cart extends Component {
     state = {
         carts: [],
         total: 0.0,
-        locationName: this.props.locationName
+        locationName: this.props.locationName,
+        userId: sessionStorage.getItem("User")
+
+    }
+
+    checkLocation(carts) {
+        console.log("check location carts", carts)
+        if (sessionStorage.getItem("locationId") === null) {
+            // sessionStorage.setItem("locationId", carts[0].locationId)
+            console.log("sessionStorage locationId set to", sessionStorage.getItem("locationId"))
+        }
     }
 
     componentDidMount() {
-        CartManager.getAll().then(carts => {
+        CartManager.getAllByUser(this.state.userId).then(carts => {
+            this.checkLocation(carts)
             this.setState({ carts })
+            const total = this.calculateTotal()
+            this.setState({ total })
         })
         this.setState({
             locationName: this.props.locationName
-
         });
-        const total = this.calculateTotal()
-        this.setState({ total })
+
     }
 
     deleteCart = (id) => {
         CartManager.delete(id)
-            .then(CartManager.getAll)
+
+            .then(() => CartManager.getAllByUser(this.state.userId))
             .then((carts) => {
-                this.props.carts.push("/carts")
+                console.log("this is carts", carts)
                 this.setState({ carts: carts }, this.calculateTotal())
+                this.props.carts.push("/carts")
 
 
             })
     };
 
+    clearCart = evt => {
+        console.log("Cart.js - clearCart function")
+        CartManager.deleteCart(sessionStorage.getItem("User"))
+        this.forceUpdate()
+    }
+
     increaseQty = (cartItem) => {
         CartManager.increaseQty(cartItem)
-            .then(CartManager.getAll)
+            .then(() => CartManager.getAllByUser(this.state.userId))
             .then((carts) => {
                 this.props.carts.push("/carts")
                 this.setState({ carts: carts }, this.calculateTotal())
@@ -48,7 +68,7 @@ class Cart extends Component {
 
     decreaseQty = (cartItem) => {
         CartManager.decreaseQty(cartItem)
-            .then(CartManager.getAll)
+            .then(() => CartManager.getAllByUser(this.state.userId))
             .then((carts) => {
                 this.props.carts.push("/carts")
                 this.setState({ carts: carts }, this.calculateTotal())
@@ -58,8 +78,10 @@ class Cart extends Component {
     };
 
     calculateTotal = () => {
+
         let fx_total = 0.0
         let locationId = sessionStorage.getItem("locationId")
+        console.log("CalculateTotal locationId is", locationId)
 
         // Get locationDrinks based on locationId
         DrinksManager.getMenu(locationId).then(menu => {
@@ -67,8 +89,8 @@ class Cart extends Component {
             for (let i = 0; i < menu.length; i++) {
 
                 for (let j = 0; j < this.state.carts.length; j++) {
-
                     // Match menuItem drinkId to cart drinkId
+                    // console.log("menu", menu)
                     if (menu[i].drinkId === this.state.carts[j].drinkId) {
                         console.log("Found match!")
                         fx_total = fx_total + (menu[i].drinkPrice * this.state.carts[j].quantity)
@@ -88,11 +110,13 @@ class Cart extends Component {
 
         // Use cart drinkId to get price from locationDrinks
         // Multiply price with cart quantity
-        // Add to total
+        // Add to total 
 
     }
 
     render() {
+        // console.log("state", this.state)
+
 
         return (
 
@@ -115,7 +139,7 @@ class Cart extends Component {
                     </Card>
                 )}
                 <div className="text-center mt-3">
-                    <div className="mt-3 mb-3">Total: ${this.state.total}</div>
+                    <div className="mt-3 mb-3">Total: ${this.state.total ? this.state.total.toFixed(2) : null}</div>
                     <Button className="btn-success btn-lg" tag={Link} to="/menu">
                         Submit Order
                     </Button>
